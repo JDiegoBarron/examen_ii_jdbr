@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request }
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { CreateUserDto } from './dto/create-user.dto';
-import { ApiBadRequestResponse, ApiBody, ApiConflictResponse, ApiCreatedResponse } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiBearerAuth, ApiBody, ApiConflictResponse, ApiCreatedResponse } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { UserRole } from 'src/auth/entities/UserRole';
@@ -10,6 +10,7 @@ import { RolesGuard } from 'src/auth/roles.guard';
 import { Roles } from 'src/decoradores/roles.decorator';
 
 @Controller('user')
+@ApiBearerAuth()
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

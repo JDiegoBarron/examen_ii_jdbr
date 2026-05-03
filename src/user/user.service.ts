@@ -23,7 +23,7 @@ export class UserService {
       const error = {
         "statusCode": 409,
         "error": "Conflict",
-        "message": ["El email ya existe"] 
+        "message": ["El username ya existe"] 
       }
       throw new ConflictException(error) 
     }

@@ -13,8 +13,4 @@ export class LoginUserDto{
     @IsString()
     @MinLength(8)
     password!: string;
-
-    @ApiProperty({ enum: UserRole, example: UserRole.USER })
-    @IsEnum(UserRole, { message: 'El rol debe ser admin, user o client' })
-    role!: UserRole;
 }
