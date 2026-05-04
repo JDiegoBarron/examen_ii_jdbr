@@ -26,7 +26,7 @@ export class VentaController {
 
   @Get(':id')
   @ApiOperation({summary: 'Obtener una sola venta por su ID'})
-  @ApiParam({name: 'id', description: 'ID de la venta', example: 5})
+  @ApiParam({name: 'id', description: 'ID de la venta', example: 1})
   @ApiOkResponse({type: Venta, description: 'Venta encontrada'})
   @ApiNotFoundResponse({description: 'Venta no encontrada'})
   findOne(@Param('id') id: string) {
@@ -35,7 +35,7 @@ export class VentaController {
 
   @Patch(':id')
   @ApiOperation({ summary: 'Actualizar una venta existente' })
-  @ApiParam({ name: 'id', description: 'ID de la venta a modificar', example: 17 })
+  @ApiParam({ name: 'id', description: 'ID de la venta a modificar', example: 1 })
   @ApiBody({ type: UpdateVentaDto })
   @ApiOkResponse({type: Venta, description: 'Datos de venta actualizados exitosamente'})
   @ApiNotFoundResponse({description: 'Venta no encontrada'})

@@ -26,7 +26,7 @@ export class ProductoController {
 
   @Get(':id')
   @ApiOperation({summary: 'Obtener un solo producto por su ID'})
-  @ApiParam({name: 'id', description: 'ID del producto', example: 14})
+  @ApiParam({name: 'id', description: 'ID del producto', example: 1})
   @ApiOkResponse({type: Producto, description: 'Producto encontrado'})
   @ApiNotFoundResponse({description: 'Producto no encontrado'})
   findOne(@Param('id') id: string) {
@@ -35,7 +35,7 @@ export class ProductoController {
 
   @Patch(':id')
   @ApiOperation({ summary: 'Actualizar un producto existente' })
-  @ApiParam({ name: 'id', description: 'ID del producto a modificar', example: 99 })
+  @ApiParam({ name: 'id', description: 'ID del producto a modificar', example: 1 })
   @ApiBody({ type: UpdateProductoDto })
   @ApiOkResponse({type: Producto, description: 'Datos de producto actualizados exitosamente'})
   @ApiNotFoundResponse({description: 'Producto no encontrado'})
