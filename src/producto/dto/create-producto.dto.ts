@@ -16,13 +16,13 @@ export class CreateProductoDto {
     precio!: number;
 
     @ApiProperty({ description: 'ID de la categoria a la que pertenece el producto', 
-        example: 3 })
+        example: 1 })
     @IsInt()
     @IsNotEmpty()
     id_categoria!: number;
 
     @ApiProperty({ description: 'ID del proveedor del producto', 
-        example: 5 })
+        example: 1 })
     @IsInt()
     @IsNotEmpty()
     id_proveedor!: number;

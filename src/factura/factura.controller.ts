@@ -13,6 +13,14 @@ import { Factura } from './entities/factura.entity';
 export class FacturaController {
   constructor(private readonly facturaService: FacturaService) {}
 
+  @Post()
+  @ApiOperation({ summary: 'Crear una nueva factura' })
+  @ApiResponse({ status: 201, type: Factura })
+  @ApiResponse({ status: 400, description: 'Datos inválidos' })
+  create(@Body() dto: CreateFacturaDto): Promise<Factura> {
+    return this.facturaService.create(dto);
+  }
+
   @Get()
   @ApiOperation({ summary: 'Obtener todas las facturas' })
   @ApiResponse({ status: 200, type: [Factura] })
@@ -26,14 +34,6 @@ export class FacturaController {
   @ApiResponse({ status: 404, description: 'Factura no encontrada' })
   findOne(@Param('id', ParseIntPipe) id: number): Promise<Factura> {
     return this.facturaService.findOne(id);
-  }
-
-  @Post()
-  @ApiOperation({ summary: 'Crear una nueva factura' })
-  @ApiResponse({ status: 201, type: Factura })
-  @ApiResponse({ status: 400, description: 'Datos inválidos' })
-  create(@Body() dto: CreateFacturaDto): Promise<Factura> {
-    return this.facturaService.create(dto);
   }
 
   @Put(':id')

@@ -20,7 +20,7 @@ export class UserController {
     description: "El registro es exitoso, y se creo en la base de datos. Regresa el usuario creado, con la contraseña hash y el ID (problemático)"
   })
   @ApiBadRequestResponse({
-    description: "Falta algún campo, el email no tiene formato correcto o la contraseña no tiene mínimo 8 caracteres"
+    description: "Falta algún campo, el username no tiene formato correcto o la contraseña no tiene mínimo 8 caracteres"
   })
   @ApiConflictResponse({
     description: "El correo ya existe en la base de datos"
