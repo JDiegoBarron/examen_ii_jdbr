@@ -33,7 +33,7 @@ export class AuthService {
       const error={
         "message":["Usuario no encontrado"], 
         "error":"No autorizado", 
-        "statusCode":403
+        "statusCode":401
       }
       throw new UnauthorizedException(error);
     }
@@ -44,7 +44,7 @@ export class AuthService {
       const error={
         "message":["Clave incorrecta"], 
         "error":"No autorizado", 
-        "statusCode":403
+        "statusCode":401
       }
       throw new UnauthorizedException(error);
     }
