@@ -2,7 +2,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsNotEmpty } from "class-validator";
 
 export class CreateProveedorDto {
-  @ApiProperty({ example: 'Dell Technologies' })
+  @ApiProperty({ example: 'Coca Cola Co.' })
   @IsString()
   @IsNotEmpty()
   nombre!: string;
