@@ -18,8 +18,8 @@ async function bootstrap() {
     .setDescription('API para administracion de tienda')
     .setVersion('1.0')
     .addBearerAuth() 
-    .addServer("http://localhost:3000", "Servidor local")
     .addServer("https://examen-ii-jdbr.onrender.com", "Servidor de producción")
+    .addServer("http://localhost:3000", "Servidor local")
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
